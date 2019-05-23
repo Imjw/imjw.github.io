@@ -42,7 +42,9 @@ yum install git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib 
 | Footer row      |            |                 |                |
 |-----------------+------------+-----------------+----------------|
 
+| ---+---|
 | 说明 | 位置 |
+| --- | --- |
 | 所有安装包 | /usr/local/src |
 | tracker跟踪服务器数据 | /fastdfs/tracker |
 | storage存储服务器数据 | /fastdfs/storage |
