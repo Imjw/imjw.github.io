@@ -12,7 +12,12 @@ tags:
 
 # 环境准备
 
-
+~~~java
+public static void aaa(){
+	int a = 0;
+	String b = "test";
+}
+~~~
 
 ## 编译环境
 
@@ -21,11 +26,11 @@ yum install git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib 
 ```
 ## 目录
 
-|说明|位置|
-|---|---|
-|所有安装包|/usr/local/src|
-|tracker跟踪服务器数据|/fastdfs/tracker|
-|storage存储服务器数据|/fastdfs/storage|
+| 说明 | 位置 |
+| --- | --- |
+| 所有安装包 | /usr/local/src |
+| tracker跟踪服务器数据 | /fastdfs/tracker |
+| storage存储服务器数据 | /fastdfs/storage |
 ```shell
 mkdir -p /fastdfs/tracker  #创建跟踪服务器数据目录
 mkdir -p /fastdfs/storage  #创建存储服务器数据目录
