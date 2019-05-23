@@ -12,13 +12,6 @@ tags:
 
 # 环境准备
 
-~~~java
-public static void aaa(){
-    int a = 0;
-    String b = "test";
-}
-~~~
-
 ## 编译环境
 
 ```shell
