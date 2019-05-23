@@ -1,5 +1,5 @@
 ---
-layout:     keynote
+layout:     post
 title:      "FastDFS搭建流程"
 subtitle:   "single & cluster"
 date:       2019-05-23 15:17:14
