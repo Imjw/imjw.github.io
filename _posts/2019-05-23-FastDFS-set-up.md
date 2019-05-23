@@ -5,11 +5,12 @@ subtitle:   "single & cluster"
 date:       2019-05-23 15:17:14
 author:     "Jw"
 header-img: ""
+catalog:    true
 tags:
     - 环境搭建
 ---
 
-### 环境准备
+# 环境准备
 
 ## 编译环境
 
