@@ -90,7 +90,7 @@ ga_domain: imjw.top
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "没有到不了的明天"
-sidebar-avatar: /img/lion.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/profile.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
