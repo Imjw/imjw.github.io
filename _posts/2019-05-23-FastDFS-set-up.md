@@ -4,7 +4,7 @@ title:      "FastDFS搭建流程"
 subtitle:   "single & cluster"
 date:       2019-05-23 15:17:14
 author:     "Jw"
-header-img: ""
+header-img: "img/post/nature-snow.jpeg"
 catalog:    true
 tags:
     - 环境搭建
