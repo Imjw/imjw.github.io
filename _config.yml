@@ -70,7 +70,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: Imjw
+# disqus_username: Imjw
 
 # Netease settings
 netease_comment: false
