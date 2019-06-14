@@ -24,7 +24,7 @@ tags:
 > *以上几步可以把调用者和具体实现操作隔离开来，调用者不必清楚具体计算如何实现，只需传入指令操作，获取对应操作类，调用计算方法即可完成计算功能。*
 
 ## UML
-![simpleFactoryUML](../img/design-pattern/SimpleFactory.png)
+![simpleFactoryUML](/img/design-pattern/SimpleFactory.png)
 
 ## Code by Java
 ```java
