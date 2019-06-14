@@ -8,8 +8,8 @@ header-img: "img/post/design-pattern.jpeg"
 catalog:    true
 description: "简单工厂模式笔记"
 tags:
-		- 设计模式
-		- 创建型模式
+    - 设计模式
+    - 创建型模式
 ---
 
 ## 场景
