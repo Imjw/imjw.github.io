@@ -22,6 +22,7 @@ tags:
 > 采用 Omnibus package installation 方式进行安装
 
 - 安装配置必要依赖
+
 ```shell
 sudo yum install -y curl policycoreutils-python openssh-server
 sudo systemctl enable sshd
@@ -30,6 +31,7 @@ sudo firewall-cmd --permanent --add-service=http
 sudo systemctl reload firewalld
 ```
 - （非必需）安装 Postfix 发送通知电子邮件，若采用其他邮件发送方式，可在安装 GitLab 后自行配置
+
 ```shell
 sudo yum install postfix
 sudo systemctl enable postfix
@@ -48,13 +50,16 @@ sudo yum install -y gitlab-ce-11.7.3-ce.0.el7.x86_64
 ## 配置 GitLab
 配置文件路径：`/etc/gitlab/gitlab.rb`
 - 配置外部访问 URL
+
 ```
 external_url 'http://xx.xx.xx.xx'
 ```
+
 > <font color="red">external_url 只能配置ip或者域名，不能带有端口，否则不能启动。</font>
 
 - 配置邮箱
 以网易163邮箱为例配置邮箱:
+
 ```
 gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "smtp.163.com"
@@ -69,6 +74,7 @@ gitlab_rails['smtp_openssl_verify_mode'] = "peer"
 gitlab_rails['gitlab_email_from'] = "xxxx@163.com"
 user["git_user_email"] = "xxxx@163.com"
 ```
+
 > 注意以上的xxxx@163.com代表用户名，即邮箱地址，而xxxxpassword不是邮箱的登陆密码而是网易邮箱的客户端授权密码, 在网易邮箱web页面的设置-POP3/SMTP/IMAP-客户端授权密码查看。
 
 
@@ -103,12 +109,14 @@ sudo gitlab-rake gitlab:backup:create
 
 **步骤**
 - 将备份 tar 文件放在 `gitlab.rb` 配置中描述的备份目录中 `gitlab_rails['backup_path']`，默认为 `/var/opt/gitlab/backups`，并将其权限改为 git 用户拥有：
+
 ```shell
 sudo cp 1560739396_2019_06_17_11.7.3_gitlab_backup.tar /var/opt/gitlab/backups/
 sudo chown git.git /var/opt/gitlab/backups/1560739396_2019_06_17_11.7.3_gitlab_backup.tar
 ```
 
 - 停止连接数据库的进程，保持其他 GitLab 进程运行：
+
 ```shell
 sudo gitlab-ctl stop unicorn
 sudo gitlab-ctl stop sidekiq
@@ -117,12 +125,14 @@ sudo gitlab-ctl status
 ```
 
 - 还原备份，指定还原文件
+
 ```shell
 # This command will overwrite the contents of your GitLab database!
 sudo gitlab-rake gitlab:backup:restore BACKUP=1560739396_2019_06_17_11.7.3
 ```
 
 - 重启 GitLab
+
 ```shell
 sudo gitlab-ctl restart
 ```
