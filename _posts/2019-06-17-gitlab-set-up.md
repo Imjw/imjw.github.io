@@ -55,10 +55,9 @@ sudo yum install -y gitlab-ce-11.7.3-ce.0.el7.x86_64
 external_url 'http://xx.xx.xx.xx'
 ```
 
-> <font color="red">external_url 只能配置ip或者域名，不能带有端口，否则不能启动。</font>
+> <font color="red">external_url 只能配置 ip 或者域名，不能带有端口，否则不能启动。</font>
 
-- 配置邮箱
-以网易163邮箱为例配置邮箱:
+- 配置邮箱，以网易163邮箱为例配置邮箱:
 
 ```
 gitlab_rails['smtp_enable'] = true
@@ -75,7 +74,7 @@ gitlab_rails['gitlab_email_from'] = "xxxx@163.com"
 user["git_user_email"] = "xxxx@163.com"
 ```
 
-> 注意以上的xxxx@163.com代表用户名，即邮箱地址，而xxxxpassword不是邮箱的登陆密码而是网易邮箱的客户端授权密码, 在网易邮箱web页面的设置-POP3/SMTP/IMAP-客户端授权密码查看。
+> 注意以上的 xxxx@163.com 代表用户名，即邮箱地址，而 xxxxpassword 不是邮箱的登陆密码而是网易邮箱的客户端授权密码, 在网易邮箱web页面的设置 -POP3/SMTP/IMAP- 客户端授权密码查看。
 
 
 ## 更新
