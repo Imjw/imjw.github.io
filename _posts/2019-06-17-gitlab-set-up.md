@@ -78,15 +78,28 @@ user["git_user_email"] = "xxxx@163.com"
 
 
 ## 更新
-> 将 GitLab 更新到指定版本，本示例采用手动下载更新包方式进行 GitLab 版本更新。([more](https://docs.gitlab.com/omnibus/update/README.html))
+> 将 GitLab 更新到指定版本，本示例采用手动下载更新包方式进行 GitLab 版本更新。([more](https://docs.gitlab.com/omnibus/update/README.html))  
+
+<font color="red">注：  
+1.下载更新包时需注意版本型号，`gitlab-ce-xxx.el7` 对应CentOS 7 版本，`gitlab-ce-xxx.el6` 对应CentOS 6 版本。  
+2.跨大版本更新需要逐级更新，不能直接升级，如 `8.13.4` -> `11.3.4`, 升级的过程： `8.13.4` -> `8.17.7` -> `9.5.10` -> `10.8.7` -> `11.3.4` 。
+</font>
 
 前往 [GitLab Community Edition repository](https://packages.gitlab.com/gitlab/gitlab-ce) ，搜索所需版本安装包，下载 rpm 安装包，执行安装包进行更新。
 
 ```shell
 # 本文示例为 11.7.3 版本
 wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ce/packages/ol/7/gitlab-ce-11.7.3-ce.0.el7.x86_64.rpm/download.rpm
+# 停止 GitLab 部分服务
+gitlab-ctl stop unicorn
+gitlab-ctl stop sidekiq
+gitlab-ctl stop nginx
 # 安装更新
 rpm -Uvh gitlab-ce-XXX.rpm
+# 重启 GitLab 服务
+gitlab-ctl restart
+# 查看当前已安装版本
+rpm -qa gitlab-ce
 ```
 
 ## 备份
