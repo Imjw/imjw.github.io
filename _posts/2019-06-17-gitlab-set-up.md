@@ -80,15 +80,14 @@ user["git_user_email"] = "xxxx@163.com"
 ## 更新
 > 将 GitLab 更新到指定版本，本示例采用手动下载更新包方式进行 GitLab 版本更新。([more](https://docs.gitlab.com/omnibus/update/README.html))  
 
-<font color="red">注：  
-1. 下载更新包时需注意版本型号，`gitlab-ce-xxx.el7` 对应CentOS 7 版本，`gitlab-ce-xxx.el6` 对应CentOS 6 版本。  
-2. 跨主版本更新需要逐级更新，不能直接升级，需要先升级到下个主版本的首个次版本。如 `8.13.4` -> `11.3.4`, 升级的过程： `8.13.4` -> `8.17.7` -> `9.5.10` -> `10.8.7` -> `11.3.4` 。具体跨版本升级请参考 [upgrade recommendations](https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations)。
-3. 无论是通过官网仓库更新还是手动下载安装包更新，在更新GitLab新版本之前都会自动备份GitLab数据库，可以通过在以下位置创建一个空文件来跳过此自动备份`/etc/gitlab/skip-auto-backup`:
+<font color="red">注意：</font>  
+*1. 下载更新包时需注意版本型号，`gitlab-ce-xxx.el7` 对应CentOS 7 版本，`gitlab-ce-xxx.el6` 对应CentOS 6 版本。*  
+*2. 跨主版本更新需要逐级更新，不能直接升级，需要先升级到下个主版本的首个次版本。如 `8.13.4` -> `11.3.4`, 升级的过程： `8.13.4` -> `8.17.7` -> `9.5.10` -> `10.8.7` -> `11.3.4` 。具体跨版本升级请参考 [upgrade recommendations](https://docs.gitlab.com/ee/policy/maintenance.html#upgrade-recommendations)。*
+*3. 无论是通过官网仓库更新还是手动下载安装包更新，在更新GitLab新版本之前都会自动备份GitLab数据库，可以通过在以下位置创建一个空文件来跳过此自动备份`/etc/gitlab/skip-auto-backup`:*
 
 ```shell
 sudo touch /etc/gitlab/skip-auto-backup
 ```
-</font>
 
 前往 [GitLab Community Edition repository](https://packages.gitlab.com/gitlab/gitlab-ce) ，搜索所需版本安装包，下载 rpm 安装包，执行安装包进行更新。
 
